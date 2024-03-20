@@ -1,3 +1,38 @@
+# Setup notes
+Here's the markdown version of the setup notes:
+
+## Setup notes
+
+* Use PyTorch 2.0.1, Python 3.10 template
+* First setup with runpod/pytorch:2.0.1-py3.10-cuda11.8.0-devel-ubuntu22.04
+* Clone repo
+* Setup WhisperX environment
+  * Install miniforge3 from here
+  * Follow the setup instructions on the repo
+    * Including the step "You may also need to install ffmpeg, rust etc. Follow openAI instructions here https://github.com/openai/whisper#setup."
+      * Install ffmpeg as described
+      * Install rust as described
+  * DONT pip install torchvision==0.14.0
+  * `export TRANSFORMERS_CACHE=/path/to/cache` (make a dir for it)
+* Setup vidchapters environment
+  * `conda create --name vidchapters python=3.7`
+  * `pip install -r requirements.txt`
+  * install CLIP
+    * instructions
+    * `pip install ftfy regex tqdm pip install git+https://github.com/openai/CLIP.git`
+  * `pip install sentencepiece`
+  * create `transformers_cache` directory
+  * `export TRANSFORMERS_CACHE=**dir**`
+  * Get t5-base model
+    * install git-lfs
+      * `curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash`
+      * `git lfs install`
+      * `git clone https://huggingface.co/google-t5/t5-base`
+    * Move the directory into `transformers_cache`
+      * Should have the folder structure `VidChapters/transformers_cache/t5-base`
+  * download vid2seq checkpoints from the repo
+    * Use gdown `pip install gdown`
+
 # VidChapters-7M: Video Chapters at Scale
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/vidchapters-7m-video-chapters-at-scale/dense-video-captioning-on-vidchapters-7m)](https://paperswithcode.com/sota/dense-video-captioning-on-vidchapters-7m?p=vidchapters-7m-video-chapters-at-scale)
