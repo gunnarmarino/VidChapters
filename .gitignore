@@ -1,0 +1,9 @@
+tiktok-vids/
+vid2seq_checkpoints
+transformers_cache/
+vid2seq_checkpoints/
+.ipynb_checkpoints/
+TOFILL/
+__pycache__/
+model/.ipynb_checkpoints/
+model/__pycache__/
